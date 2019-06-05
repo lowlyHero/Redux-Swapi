@@ -13,7 +13,7 @@ export const getChars = () => dispatch => {
     .then(res => {
         dispatch({
             type: FETCH_SUCCESS,
-            payload: res.results
+            payload: res.data.results
         });
     })
     .catch(err => {
