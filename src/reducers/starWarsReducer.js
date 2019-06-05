@@ -5,8 +5,8 @@ import {
 } from "../actions";
 
 const initialState = {
-  characters: null,
-  error: '',
+  characters: [],
+  error: null,
   fetching: false
 };
 export const charsReducer = (state = initialState, action) => {
@@ -14,14 +14,12 @@ export const charsReducer = (state = initialState, action) => {
     case FETCH_CHARACTER:
       return {
         ...state,
-        error: '',
         fetching: true
       };
       case FETCH_SUCCESS:
         return {
           ...state,
           characters: action.payload,
-          error: '',
           fetching: false
         };
         case FETCH_FAIL: 

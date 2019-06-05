@@ -10,7 +10,7 @@ class CharacterListView extends React.Component {
   }
 
   componentDidMount() {
-    // call our action
+    this.props.getChars();
   }
 
   render() {
@@ -26,9 +26,9 @@ class CharacterListView extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  characters: state.characters,
-  error: state.error,
-  fetching: state.fetching
+  characters: state.charsReducer.characters,
+  error: state.charsReducer.error,
+  fetching: state.charsReducer.fetching
 });
 
 export default connect(
