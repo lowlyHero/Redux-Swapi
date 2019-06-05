@@ -8,12 +8,12 @@ export const getChars = () => dispatch => {
     dispatch({ type: FETCH_CHARACTER });
     axios
     .get(
-        `https://swapi.co/api/people/`
+        'https://swapi.co/api/people/'
     )
     .then(res => {
         dispatch({
             type: FETCH_SUCCESS,
-            payload: res.data
+            payload: res.results
         });
     })
     .catch(err => {
